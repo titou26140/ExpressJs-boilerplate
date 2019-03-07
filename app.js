@@ -6,6 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const errorHandler = require('errorhandler');
 const constants = require('./config/constants')
+const helmet = require('helmet');
 
 //Configure mongoose's promise to global promise
 mongoose.promise = global.Promise;
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: 'passport-tutorial', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
+app.use(helmet());
 
 if (!isProduction) {
   app.use(errorHandler());
