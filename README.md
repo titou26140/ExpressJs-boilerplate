@@ -29,3 +29,21 @@ During the development I advise you to use [nodemon](https://github.com/remy/nod
 ```
 nodemon app.js
 ```
+
+### :cop: Permit road for one role
+```JS
+const permit = require ('../../middlewares/permission');
+
+router.get('/', auth.required, permit('Admin'), async (req, res, next) => {
+  return res.send("ok !")
+});
+```
+
+### :man: Set user in request
+```JS
+const setUser = require('../../middlewares/setUserInRequest')
+
+router.get('/', auth.required, setUser(), async (req, res, next) => {
+  return res.send(req.user)
+});
+```
