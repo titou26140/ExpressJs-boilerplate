@@ -1,47 +1,35 @@
-# Passport-Tutorial
+# ExpressJs-boilerplate
+:rocket: Boilerplate for speed up expressJs development !
 
-Node.js authentication tutorial using Passport.js
+## Technologies
 
-### Prerequisites
+- ExpressJs
+- Mongoose
+- PassportJs
 
-Make sure you have these installed on your machine
+:fire: This boilerplate include some middlewares to handle permissions and set the user in the requests.
 
-* [Node.js](https://nodejs.org/en/download/)
-* [MongoDB](https://www.mongodb.com)
-* **npm** This comes with Node.js, but make sure you check if you have it anyway
-
-### Installing packages
-
-Install packages
-
+## Instalation
+This boilerplate use the **yarn** packets manager.
+Install dependencies :
 ```
-npm i
+yarn
 ```
 
-### Running the app
+:warning: Before start the server you have to config your project.
+Modify the file **config/constants.js** to set up your project.
 
-To run the app (dev. mode)
-
+## Usage
+You can use :
 ```
-npm start
+node app.js
 ```
 
-<<<<<<< HEAD
-## Built With
+During the development I advise you to use [nodemon](https://github.com/remy/nodemon) to restart the server each time you modify your server.
+```
+nodemon app.js
+```
 
-* [Node.js](https://nodejs.org) - The backend framework used
-* [Express.js](https://github.com/expressjs/express) - Node.js framework used
-* [MongoDB](https://www.mongodb.com/) - Database platform used
-
-
-## Authors
-
-* **Antonio Erdeljac** - *Initial work* - [Passport-Tutorial](https://github.com/AntonioErdeljac/Blog-Tutorial)
-
-## Acknowledgments
-
-* This was a tutorial for my [Medium article](https://medium.com/p/4a56ed18e81e)
-=======
 ### :cop: Permit road for one role
 ```JS
 const permit = require ('../../middlewares/permission');
@@ -59,4 +47,3 @@ router.get('/', auth.required, setUser(), async (req, res, next) => {
   return res.send(req.user)
 });
 ```
->>>>>>> fde769678fc73b3814e479e76607a2a04b69c2d2
