@@ -26,6 +26,7 @@ To run the app (dev. mode)
 npm start
 ```
 
+<<<<<<< HEAD
 ## Built With
 
 * [Node.js](https://nodejs.org) - The backend framework used
@@ -40,3 +41,22 @@ npm start
 ## Acknowledgments
 
 * This was a tutorial for my [Medium article](https://medium.com/p/4a56ed18e81e)
+=======
+### :cop: Permit road for one role
+```JS
+const permit = require ('../../middlewares/permission');
+
+router.get('/', auth.required, permit('Admin'), async (req, res, next) => {
+  return res.send("ok !")
+});
+```
+
+### :man: Set user in request
+```JS
+const setUser = require('../../middlewares/setUserInRequest')
+
+router.get('/', auth.required, setUser(), async (req, res, next) => {
+  return res.send(req.user)
+});
+```
+>>>>>>> fde769678fc73b3814e479e76607a2a04b69c2d2
